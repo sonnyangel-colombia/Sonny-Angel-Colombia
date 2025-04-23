@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sonny Angel Colombia</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">🌸 Sonny Angel Colombia</div>
+    <nav>
+      <a href="#productos">Productos</a>
+      <a href="#testimonios">Testimonios</a>
+      <a href="#colaboracion">Colaboración</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Descubre la magia de los <span>Sonny Angel</span></h1>
+    <p>Figuras coleccionables únicas para corazones felices</p>
+    <a href="#productos" class="btn">Ver Productos</a>
+  </section>
+
+  <section id="productos" class="productos">
+    <h2>Catálogo Destacado</h2>
+    <div class="galeria">
+      <img src="sonnysencargados.png" alt="Series encargadas">
+      <img src="clientesfelices.png" alt="Clientes felices">
+    </div>
+  </section>
+
+  <section id="testimonios" class="testimonios">
+    <h2>Clientes Felices</h2>
+    <p>“¡Estoy encantada con mis Sonny Angel, llegaron rapidísimo y están hermosos!” – @cliente_feliz</p>
+    <p>“Perfecto para regalar, todos los detalles son adorables 💖” – @fan_angel</p>
+  </section>
+
+  <section id="colaboracion" class="colaboracion">
+    <h2>Colaboración con Sofiamood</h2>
+    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@sofiamood14/video/7477385688472898871" data-video-id="7477385688472898871" style="max-width: 325px;min-width: 200px;">
+      <section></section>
+    </blockquote>
+    <script async src="https://www.tiktok.com/embed.js"></script>
+  </section>
+
+  <section id="contacto" class="contacto">
+    <h2>Contacto</h2>
+    <p>¿Tienes preguntas o quieres hacer un pedido? ¡Escríbenos!</p>
+    <form class="formulario" onsubmit="mostrarMensaje(); return false;">
+      <input type="text" placeholder="Nombre completo" required>
+      <input type="email" placeholder="Correo electrónico" required>
+      <textarea placeholder="Escribe tu mensaje aquí..." required></textarea>
+      <button type="submit">Enviar mensaje</button>
+    </form>
+    <p class="info-extra">
+      También puedes escribirnos por WhatsApp al <a href="https://wa.me/573178044926" target="_blank">317 804 4926</a> o en Instagram <a href="https://instagram.com/sonnyangel.colombia" target="_blank">@sonnyangel.colombia</a>
+    </p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Sonny Angel Colombia. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    function mostrarMensaje() {
+      alert("Gracias por tu mensaje 💌 Nos contactaremos contigo pronto.");
+    }
+  </script>
+</body>
+</html>
