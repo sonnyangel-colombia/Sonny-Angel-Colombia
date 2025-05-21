@@ -24,6 +24,8 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 header .logo {
@@ -43,6 +45,11 @@ header nav a:hover {
   text-decoration: underline;
 }
 
+header nav a:hover::after {
+  content: " 💫";
+  animation: flotar 0.6s ease-out;
+}
+
 .hero {
   text-align: center;
   padding: 100px 20px 60px;
@@ -56,6 +63,12 @@ header nav a:hover {
 
 .hero h1 span {
   color: #ff9aa2;
+}
+
+.hero h1::after {
+  content: "✨";
+  margin-left: 10px;
+  animation: brillar 1.5s infinite alternate;
 }
 
 .hero p {
@@ -99,6 +112,12 @@ header nav a:hover {
   width: 300px;
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.galeria img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
 .testimonios,
@@ -115,6 +134,12 @@ header nav a:hover {
 .contacto h2 {
   margin-bottom: 20px;
   color: #ff6b81;
+}
+
+.testimonios p:hover {
+  color: #ff4f66;
+  transform: scale(1.02);
+  transition: 0.3s;
 }
 
 .contacto a {
@@ -159,6 +184,11 @@ header nav a:hover {
   background-color: #ff4f66;
 }
 
+.formulario button:active {
+  transform: scale(0.97);
+  background-color: #ff3b5c;
+}
+
 .contacto .info-extra {
   margin-top: 20px;
   font-size: 0.95rem;
@@ -170,4 +200,27 @@ footer {
   text-align: center;
   color: white;
   margin-top: 40px;
+}
+
+/* --- Animaciones --- */
+@keyframes brillar {
+  from {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes flotar {
+  from {
+    transform: translateY(-4px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
