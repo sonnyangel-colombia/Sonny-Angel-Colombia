@@ -225,4 +225,106 @@ footer {
   }
 }
 
+/* --- Media Queries para diseño adaptativo --- */
 
+/* tabletas en horizontal */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .galeria img {
+    width: 250px;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+}
+
+/* tabletas en vertical */
+@media (min-width: 768px) and (max-width: 991px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  header nav {
+    margin-top: 10px;
+  }
+
+  .galeria {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .galeria img {
+    width: 80%;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
+/* smartphones en horizontal */
+@media (max-width: 767px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  header nav {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .galeria {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .galeria img {
+    width: 90%;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .formulario {
+    width: 90%;
+  }
+}
+
+/* smartphones en vertical */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+
+  .galeria img {
+    width: 95%;
+  }
+
+  .formulario input,
+  .formulario textarea,
+  .formulario button {
+    font-size: 0.95rem;
+  }
+}
