@@ -1,3 +1,12 @@
+:root {
+  --rosa-principal: #ff6b81;
+  --rosa-suave: #ff9aa2;
+  --blanco-suave: rgba(255, 255, 255, 0.95);
+  --sombra: 0 0 15px rgba(0, 0, 0, 0.15);
+  --fuente-principal: 'Poppins', sans-serif;
+  --borde-radius: 12px;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 * {
@@ -7,7 +16,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--fuente-principal);
   background-image: url('fondo.png');
   background-size: cover;
   background-position: center;
@@ -16,7 +25,7 @@ body {
 }
 
 header {
-  background: rgba(255, 182, 193, 0.95);
+  background: var(--rosa-suave);
   padding: 15px 30px;
   display: flex;
   justify-content: space-between;
@@ -25,7 +34,7 @@ header {
   top: 0;
   z-index: 1000;
   backdrop-filter: blur(5px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--sombra);
 }
 
 header .logo {
@@ -45,11 +54,6 @@ header nav a:hover {
   text-decoration: underline;
 }
 
-header nav a:hover::after {
-  content: " 💫";
-  animation: flotar 0.6s ease-out;
-}
-
 .hero {
   text-align: center;
   padding: 100px 20px 60px;
@@ -58,11 +62,11 @@ header nav a:hover::after {
 
 .hero h1 {
   font-size: 2.5rem;
-  color: #ff6b81;
+  color: var(--rosa-principal);
 }
 
 .hero h1 span {
-  color: #ff9aa2;
+  color: var(--rosa-suave);
 }
 
 .hero h1::after {
@@ -77,11 +81,11 @@ header nav a:hover::after {
 }
 
 .btn {
-  background: #ff6b81;
+  background: var(--rosa-principal);
   color: white;
   padding: 12px 24px;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: var(--borde-radius);
   font-weight: bold;
   transition: 0.3s;
 }
@@ -92,26 +96,25 @@ header nav a:hover::after {
 
 .productos {
   padding: 40px 20px;
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--blanco-suave);
   text-align: center;
 }
 
 .productos h2 {
   margin-bottom: 20px;
-  color: #ff6b81;
+  color: var(--rosa-principal);
 }
 
 .galeria {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 20px;
 }
 
 .galeria img {
-  width: 300px;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 100%;
+  border-radius: var(--borde-radius);
+  box-shadow: var(--sombra);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -125,7 +128,7 @@ header nav a:hover::after {
 .contacto {
   padding: 40px 20px;
   text-align: center;
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--blanco-suave);
   margin-top: 30px;
 }
 
@@ -133,7 +136,7 @@ header nav a:hover::after {
 .colaboracion h2,
 .contacto h2 {
   margin-bottom: 20px;
-  color: #ff6b81;
+  color: var(--rosa-principal);
 }
 
 .testimonios p:hover {
@@ -143,25 +146,29 @@ header nav a:hover::after {
 }
 
 .contacto a {
-  color: #ff6b81;
+  color: var(--rosa-principal);
   text-decoration: none;
 }
 
 .formulario {
   max-width: 500px;
   margin: 20px auto;
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 15px;
+  grid-template-columns: 1fr;
+  background: var(--blanco-suave);
+  padding: 20px;
+  border-radius: var(--borde-radius);
+  box-shadow: var(--sombra);
 }
 
 .formulario input,
 .formulario textarea {
   padding: 12px;
   border: 1px solid #ddd;
-  border-radius: 8px;
+  border-radius: var(--borde-radius);
   font-size: 1rem;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--fuente-principal);
 }
 
 .formulario textarea {
@@ -170,11 +177,11 @@ header nav a:hover::after {
 }
 
 .formulario button {
-  background-color: #ff6b81;
+  background-color: var(--rosa-principal);
   color: white;
   padding: 12px;
   border: none;
-  border-radius: 8px;
+  border-radius: var(--borde-radius);
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s;
@@ -184,25 +191,20 @@ header nav a:hover::after {
   background-color: #ff4f66;
 }
 
-.formulario button:active {
-  transform: scale(0.97);
-  background-color: #ff3b5c;
-}
-
 .contacto .info-extra {
   margin-top: 20px;
   font-size: 0.95rem;
 }
 
 footer {
-  background: rgba(255, 182, 193, 0.9);
+  background: var(--rosa-suave);
   padding: 20px;
   text-align: center;
   color: white;
   margin-top: 40px;
 }
 
-/* --- Animaciones --- */
+/* Animaciones */
 @keyframes brillar {
   from {
     opacity: 0.5;
@@ -214,117 +216,17 @@ footer {
   }
 }
 
-@keyframes flotar {
-  from {
-    transform: translateY(-4px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-/* --- Media Queries para diseño adaptativo --- */
-
-/* tabletas en horizontal */
-@media (min-width: 992px) and (max-width: 1199px) {
-  .galeria img {
-    width: 250px;
-  }
-
-  .hero h1 {
-    font-size: 2.2rem;
-  }
-}
-
-/* tabletas en vertical */
-@media (min-width: 768px) and (max-width: 991px) {
-  header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  header nav {
-    margin-top: 10px;
-  }
-
+/* Media Queries */
+@media (max-width: 768px) {
   .galeria {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .galeria img {
-    width: 80%;
-  }
-
-  .hero h1 {
-    font-size: 2rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-}
-
-/* smartphones en horizontal */
-@media (max-width: 767px) {
-  header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  header nav {
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 10px;
-  }
-
-  .galeria {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .galeria img {
-    width: 90%;
+    grid-template-columns: 1fr;
   }
 
   .hero h1 {
     font-size: 1.8rem;
   }
 
-  .hero p {
-    font-size: 1rem;
-  }
-
   .formulario {
     width: 90%;
-  }
-}
-
-/* smartphones en vertical */
-@media (max-width: 480px) {
-  .hero h1 {
-    font-size: 1.6rem;
-  }
-
-  .hero p {
-    font-size: 0.95rem;
-  }
-
-  .btn {
-    padding: 10px 20px;
-    font-size: 0.95rem;
-  }
-
-  .galeria img {
-    width: 95%;
-  }
-
-  .formulario input,
-  .formulario textarea,
-  .formulario button {
-    font-size: 0.95rem;
   }
 }
